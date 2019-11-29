@@ -14,17 +14,39 @@ import { from } from 'rxjs';
 
 export class AppComponent implements OnInit {
 
+  weather;
+  url = "http://openweathermap.org/img/wn/";
+  url2 = "@2x.png";
 constructor(private weatherService: WeatherService){
 
 }
 //imprimiendo en consola listo para un placeholder
   ngOnInit(){
-    this.weatherService.getWeather('london')
+   
+  }
+
+  getWeatherCity(cityName: string){
+    this.weatherService.getWeather(cityName)
     .subscribe(
-      res => console.log(res),
+      //res => console.log(res),
+      res => {
+        this.weather = res;
+        console.log(res)
+      },
       err => console.log(err)
     )
   }
 
+  onSubmit(cityName: HTMLInputElement){
+    if (cityName.value){
+      //console.log(cityName.value);
+      this.getWeatherCity(cityName.value);
+      cityName.value = '';
+    } else{
+        alert('Ingrese un dato válido');
+    }
+        cityName.focus();
+        return false;
+  }
  
 }
