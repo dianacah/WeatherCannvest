@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 constructor(private weatherService: WeatherService){
 
 }
-//imprimiendo en consola listo para un placeholdeer
+//imprimiendo en consola listo para un placeholder
   ngOnInit(){
     this.weatherService.getWeather('london')
     .subscribe(
@@ -25,4 +25,6 @@ constructor(private weatherService: WeatherService){
       err => console.log(err)
     )
   }
+
+ 
 }

@@ -8,9 +8,70 @@
   />
   <span>Weather</span>
 </div>
+<!--Contenido información clima-->
+<div class="search">
 
-<div class="content" role="main">
+  <div class="input-group">
+    <input class="form-control" type="text" placeholder="Ingresa el nombre de la ciudad" >
+    <div class="input-group-append" >
+    <button class="input-group-text">BUSCAR</button>
+    </div>
+  </div>
+</div>
 
+  <!-- Resultado de la consulta parte 1-->
+  
+  <div class="content">
+    <h3>El clima en la ciudad de {{weather.name}} is</h3>
+    <div class="weather">
+      <h1>16° C</h1>
+      <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+      <h5>Soleado</h5>
+    </div>
+    <!-- pronostico de los siguientes 5 dias -->
+
+    <div class="flexForecast">
+
+      <div class="forecast">
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+        <p>18°C</p>
+        <p>4.2 m/s</p>
+        <p>1010.2</p>
+      </div>
+
+      <div class="forecast">
+          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+          <p>18°C</p>
+          <p>4.2 m/s</p>
+          <p>1010.2</p>
+        </div>
+
+        <div class="forecast">
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+            <p>18°C</p>
+            <p>4.2 m/s</p>
+            <p>1010.2</p>
+          </div>
+
+          <div class="forecast">
+              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+              <p>18°C</p>
+              <p>4.2 m/s</p>
+              <p>1010.2</p>
+            </div>
+
+            <div class="forecast">
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                <p>18°C</p>
+                <p>4.2 m/s</p>
+                <p>1010.2</p>
+              </div>
+    </div>
+
+
+  
+
+  
   
 
   
