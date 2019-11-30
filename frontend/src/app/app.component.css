@@ -5,8 +5,23 @@
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
   }
 
+  .container{
+    background-image: linear-gradient(
+      rgba(25, 18, 87, 0.5),
+      rgba(25, 18, 87, 0.5)
+    ),
+    url(../assets/fondo/shutterstock.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  max-width: 100%;
+  margin: 0px;
+
+    
+  }
   .toolbar {
     height: 60px;
     margin: -8px;
@@ -28,7 +43,7 @@
     max-width: 960px;
     flex-direction: column;
     align-items: center;
-    background-color: #125597;
+    background-color: rgba(5, 83, 146, 0.3);
     
   }
 
@@ -40,8 +55,9 @@
     height: auto;
     flex-direction: column;
     align-items: center;
-    background-color: #125597;
+    background-color: rgba(5, 83, 146, 0.3);
     color: aliceblue;
+    
   }
   .weather{
     display: flex;
@@ -83,30 +99,4 @@
 
   /* Responsive Styles */
   /* @media screen and (max-width: 767px) {
-
-    .card-container > *:not(.circle-link) ,
-    .terminal {
-      width: 100%;
-    }
-
-    .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
-    }
-
-    .card.highlight-card span {
-      margin-left: 72px;
-    }
-
-    svg#rocket-smoke {
-      right: 120px;
-      transform: rotate(-5deg);
-    }
-  }
-
-  @media screen and (max-width: 575px) {
-    svg#rocket-smoke {
-      display: none;
-      visibility: hidden;
-    }
   } */
