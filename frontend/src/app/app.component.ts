@@ -8,27 +8,30 @@ import { from } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 // export class AppComponent {
 //   title = 'weather-cannvest';
 // }
 
 export class AppComponent implements OnInit {
-
+  //Clima - weather
   weather;
-  url = "http://openweathermap.org/img/wn/";
-  url2 = "@2x.png";
+  urlimg = "http://openweathermap.org/img/wn/";
+  url2 = ".png";
+  //Pronóstico - Forecast
+  forecast;
+  
+
 constructor(private weatherService: WeatherService){
 
 }
-//imprimiendo en consola listo para un placeholder
   ngOnInit(){
-   
+    
   }
-
+  //Llamando el servicio de clima
   getWeatherCity(cityName: string){
     this.weatherService.getWeather(cityName)
     .subscribe(
-      //res => console.log(res),
       res => {
         this.weather = res;
         console.log(res)
@@ -36,11 +39,23 @@ constructor(private weatherService: WeatherService){
       err => console.log(err)
     )
   }
+ 
+  getForecastCity(cityName: string){
+    this.weatherService.getForecast(cityName)
+    .subscribe(res => {
+        this.forecast = res;
+        console.log(res)
+      },
+      err => console.log(err)
+    
+    )
+  }
 
   onSubmit(cityName: HTMLInputElement){
     if (cityName.value){
-      //console.log(cityName.value);
+      console.log(cityName.value);
       this.getWeatherCity(cityName.value);
+      this.getForecastCity(cityName.value)
       cityName.value = '';
     } else{
         alert('Ingrese un dato válido');

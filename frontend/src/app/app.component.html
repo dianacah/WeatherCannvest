@@ -24,49 +24,56 @@
   
   <div class="content">
     <div *ngIf="weather" class="weather">
-      <h3>El clima en la ciudad de {{weather.name}} es</h3>
+      <div>
+      <h3>La temperatura actual en la ciudad de {{weather.name}} es </h3>
+      </div>
       <h1>{{weather.main.temp}}°C</h1>
-      <img src="{{url}}{{weather.weather[0].icon}}{{url2}}" alt="">
+      <img src="{{urlimg}}{{weather.weather[0].icon}}{{url2}}" alt="">
       <h5>{{weather.weather[0].description}}</h5>
+
     </div>
     <!-- pronostico de los siguientes 5 dias -->
 
     <div class="flexForecast">
+      
 
-      <div class="forecast">
-        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
-        <p>18°C</p>
-        <p>4.2 m/s</p>
-        <p>1010.2</p>
+      <div *ngIf="forecast" class="forecast">
+        <img src="{{urlimg}}{{forecast.list[0].weather[0].icon}}{{url2}}" alt="">
+        <p>{{forecast.list[0].main.temp}} °C</p>
+        <p>{{forecast.list[0].wind.speed}} m/s</p>
+        <p>{{forecast.list[0].main.pressure}}</p>
       </div>
 
-      <div class="forecast">
-          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
-          <p>18°C</p>
-          <p>4.2 m/s</p>
-          <p>1010.2</p>
-        </div>
+      <div *ngIf="forecast" class="forecast">
+        <img src="{{urlimg}}{{forecast.list[1].weather[0].icon}}{{url2}}" alt="">
+        <p>{{forecast.list[1].main.temp}} °C</p>
+        <p>{{forecast.list[1].wind.speed}} m/s</p>
+        <p>{{forecast.list[1].main.pressure}}</p>
+      </div>
 
-        <div class="forecast">
-            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
-            <p>18°C</p>
-            <p>4.2 m/s</p>
-            <p>1010.2</p>
-          </div>
+      <div *ngIf="forecast" class="forecast">
+        <img src="{{urlimg}}{{forecast.list[2].weather[0].icon}}{{url2}}" alt="">
+        <p>{{forecast.list[2].main.temp}} °C</p>
+        <p>{{forecast.list[2].wind.speed}} m/s</p>
+        <p>{{forecast.list[2].main.pressure}}</p>
+      </div>
 
-          <div class="forecast">
-              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
-              <p>18°C</p>
-              <p>4.2 m/s</p>
-              <p>1010.2</p>
-            </div>
+      <div *ngIf="forecast" class="forecast">
+        <img src="{{urlimg}}{{forecast.list[3].weather[0].icon}}{{url2}}" alt="">
+        <p>{{forecast.list[3].main.temp}} °C</p>
+        <p>{{forecast.list[3].wind.speed}} m/s</p>
+        <p>{{forecast.list[3].main.pressure}}</p>
+      </div>
 
-            <div class="forecast">
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
-                <p>18°C</p>
-                <p>4.2 m/s</p>
-                <p>1010.2</p>
-              </div>
+      <div *ngIf="forecast" class="forecast">
+        <img src="{{urlimg}}{{forecast.list[4].weather[0].icon}}{{url2}}" alt="">
+        <p>{{forecast.list[4].main.temp}} °C</p>
+        <p>{{forecast.list[4].wind.speed}} m/s</p>
+        <p>{{forecast.list[4].main.pressure}}</p>
+      </div>
+
+
+          
     </div>
 
 
